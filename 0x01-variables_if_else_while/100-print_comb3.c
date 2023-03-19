@@ -16,6 +16,7 @@ int main(void)
 		for (b = 1; b < 10; b++)
 		{
 			if (a < b && a != b)
+			{
 				putchar(a + '0');
 				putchar(b + '0');
 				if (a + b != 17)
@@ -23,8 +24,9 @@ int main(void)
 					putchar(',');
 					putchar(' ');
 				}
+			}
 		}
 	}
-	putchar('\n')
+	putchar('\n');
 	return (0);
 }
