@@ -13,9 +13,7 @@
 
 int print_sign(int n)
 {
-	int n;
-
-	if (n > o)
+	if (n > 0)
 	{
 		_putchar('+');
 		return (1);
