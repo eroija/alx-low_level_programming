@@ -4,41 +4,43 @@
 /**
  * print_to_98 - function to print natural numbers
  *
- * @n: function parameter
+ * @n: number to start printing from
  *
  * Return: always 0
  */
 
 void print_to_98(int n)
 {
-	int a;
-
-	if (n >= 0 && n <= 98)
+	if (n <= 98)
 	{
-		for (a = n ; a <= 98 ; a++)
-		{
-			printf("%d, ", a);
-		}
-		printf("\n");
-	}
-	else if (n < 0)
+	for (; n <= 98; n++)
 	{
-		for (a = n ; a <= 98 ; a++)
-		{
-			printf("%d, ", a);
-		}
-		printf("\n");
-	}
-	else if (n > 98)
+	if (n == 98)
 	{
-		for (a = n ; a >= 98 ; a++)
-		{
-			printf("%d, ", a);
-		}
-		printf("\n");
+	printf("%d", n);
+	printf("\n");
+	break;
 	}
-	else if (n == 98)
-		printf("%d, ", n);
-
+	else
+	{
+	printf("%d, ", n);
+	}
+	}
+	}
+	else
+	{
+	for (; n >= 98; n--)
+	{
+	if (n == 98)
+	{
+	printf("%d", n);
+	printf("\n");
+	break;
+	}
+	else
+	{
+	printf("%d, ", n);
+	}
+	}
+	}
 }
-
