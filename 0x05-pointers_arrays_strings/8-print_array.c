@@ -1,19 +1,21 @@
-#include "main.h"
+#include <stdio.h>
 /**
  * print_array - prints n elements of an array followed by new line
- * @a: pointer to first int
- * @n: pointer to second int
- * Return: Always 0
+ * @a: This is the input array
+ * @n: This is the length of array
+ * Return: a and n inputs
  */
 void print_array(int *a, int n)
 {
-	int i = 0;
+	int index_of_array;
 
-	for (i = 0; i < n; i++)
+	for (index_of_array = 0; index_of_array < n; index_of_array++)
 	{
-		printf("%d", a[i]);
-		if (i < n - 1)
+		printf("%d", a[index_of_array]);
+		if (index_of_array != (n - 1))
+		{
 			printf(", ");
+		}
 	}
-	printf("\n");
+	putchar('\n');
 }
