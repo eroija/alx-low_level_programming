@@ -1,4 +1,4 @@
-i#ifndef STRTYP
+#ifndef STRTYP
 #define STRTYP
 
 /**
