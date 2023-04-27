@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdio.h>
+#include <string.h>
 
 /**
  * add_node - a function that adds a new node at
@@ -11,23 +11,23 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *nn;
+	list_t *net;
 
-	size_t i;
+	size_t a;
 
-	nn = malloc(sizeof(list_t));
+	net = malloc(sizeof(list_t));
 
-	if (nn == NULL)
+	if (net == NULL)
 		return (NULL);
 
-	nn->str = strdup(str);
+	net->str = strdup(str);
 
-	for (i = 0; str[i]; i++)
+	for (a = 0; str[a]; a++)
 		;
 
-	nn->len = i;
-	nn->next = *head;
-	*head = nn;
+	net->next = *head;
+	net->len = a;
+	*head = net;
 
 	return (*head);
 }
