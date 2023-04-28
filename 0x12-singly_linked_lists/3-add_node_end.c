@@ -11,7 +11,7 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t node, *current_node;
+	list_t *node, *current_node;
 	size_t j;
 
 	/* Create a new node*/
