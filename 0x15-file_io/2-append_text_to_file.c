@@ -1,10 +1,14 @@
 #include "main.h"
 #include <sys/types.h>
-#include <sysstat.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
 
 /**
  * append_text_to_file - function that appends text at the end of the file
@@ -15,7 +19,9 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int f, w;
+	int f;
+	int w;
+	int let;
 
 	if (filename == NULL)
 		return (-1);
@@ -25,18 +31,14 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (text_content == NULL)
+	if (text_content)
 	{
-		close(f);
-		return (1);
-	}
-	w = write(f, text_content, strlen(text_content));
-	if (w == -1 || w != strlen(text_content))
-	{
-		close(f);
-		return (-1);
+		for (let = 0; text_content[let]; let++)
+			;
+		w = write(f, text_content, let);
+		if (w == -1)
+			return (-1);
 	}
 	close(f);
 	return (1);
-
 }
