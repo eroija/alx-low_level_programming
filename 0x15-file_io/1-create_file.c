@@ -16,22 +16,22 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int f, wr, i;
+	int f, i = 0, total = 1;
 
 	if (filename == NULL)
 		return (-1);
 
-	if (text_content != NULL)
-	{
-		for (i = 0; text_content[i];)
-			i++;
-	}
-	f = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	wr = write(f, text_content, i);
-
-	if (f == -1 || wr == -1)
+	f = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (f == -1)
 		return (-1);
-
+	if (text_content)
+	{
+		while (text_content[i])
+			i++;
+		total = write(f, text_content, i);
+	}
+	if (total == -1)
+		return (-1);
 	close(f);
 	return (1);
 }
