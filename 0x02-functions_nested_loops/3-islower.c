@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
   * _islower - function to print lower case
   *
