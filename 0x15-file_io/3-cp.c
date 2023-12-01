@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <fntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
 
@@ -36,7 +35,7 @@ char *create_buffer(char *file)
  * close_file - close file descriptor
  * @fd: file descriptor to be closed
  */
-void close_file(int fd);
+void close_file(int fd)
 {
 	int i;
 
