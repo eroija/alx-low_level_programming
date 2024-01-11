@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stddef.h>
+
 
 /**
  * dlistint_len -  a function that returns the number
@@ -23,5 +23,5 @@ size_t dlistint_len(const dlistint_t *h)
 		total++;
 		h = h->next;
 	}
-	return (total)
+	return (total);
 }
