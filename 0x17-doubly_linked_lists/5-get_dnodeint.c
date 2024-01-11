@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stddef.h>
+
 
 /**
  * get_dnodeint_at_index - function that returns the
@@ -12,17 +12,21 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int count;
+	dlistint_t *tsr;
 
 	count = 0;
 
-	while (head != NULL)
+	if (head == NULL)
+		return (NULL);
+	tsr = head;
+	while (tsr)
 	{
-		if (count == index)
+		if (index == count)
 		{
-			return (head);
-		}
-		head = head->next;
-		count++;
+			return (tsr);
+			count++;
+			tsr = tsr->next;
+		}	
 	}
 	return (NULL);
 }
